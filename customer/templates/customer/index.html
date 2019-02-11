@@ -1,3 +1,53 @@
 {% extends "customer/layout.html" %} {% block content %}
 <h1>{{ title }}</h1>
+<table class="table table-striped table-condensed">
+    <thead>
+        <th>Registration date</th>
+        <th>STAFF MSA ID</th>
+        <th>Store Name (Code)</th>
+        <th>Customer's Name</th>
+        <th>Customer's Phone No</th>
+        <th>Device Make & Model</th>
+        <th>IMEI Number</th>
+        <th>Digi Package</th>
+        <th>Phone Freedom 365</th>
+        <th>Phone Freedom 365 (Digi Postpaid 190)</th>
+        <th>Phone Freedom 365 (Digi Postpaid 160)</th>
+        <th>Phone Freedom 365 (Digi Postpaid 120)</th>
+        <th>Phone Freedom 365 (Digi Postpaid 80)</th>
+        <th>Digi Phone Bundle</th>
+        <th>Digi Phone Bundle (Digi Postpaid 190)</th>
+        <th>Digi Phone Bundle (Digi Postpaid 160)</th>
+        <th>Digi Phone Bundle (Digi Postpaid 120)</th>
+        <th>Digi Phone Bundle (Digi Postpaid 80)</th>
+        <th>Do you declare and agree on the above?</th>
+        <th>Do you declare and agree on the above?</th>
+    </thead>
+    <tbody>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer.registration_date }}</td>
+            <td>{{ customer.staff_msa_id }}</td>
+            <td>{{ customer.store_name }}</td>
+            <td>{{ customer.customer_name }}</td>
+            <td>{{ customer.customer_phone }}</td>
+            <td>{{ customer.device_make_model }}</td>
+            <td>{{ customer.imei_number }}</td>
+            <td>{{ customer.package_name }}</td>
+            <td>{{ customer.pf_package_variant }}</td>
+            <td>{{ customer.pf_190_detail }}</td>
+            <td>{{ customer.pf_160_detail }}</td>
+            <td>{{ customer.pf_120_detail }}</td>
+            <td>{{ customer.pf_80_detail }}</td>
+            <td>{{ customer.dpb_package_variant }}</td>
+            <td>{{ customer.dpb_190_detail }}</td>
+            <td>{{ customer.dpb_160_detail }}</td>
+            <td>{{ customer.dpb_120_detail }}</td>
+            <td>{{ customer.dpb_80_detail }}</td>
+            <td>{{ customer.agreement_1 }}</td>
+            <td>{{ customer.agreement_2 }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
