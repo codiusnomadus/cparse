@@ -1,0 +1,34 @@
+{% extends "customer/layout.html" %} {% block content %}
+<h1>{{ title }}</h1>
+<!-- TRANS_DATE	MSA_ID	STORE_NAME	CUST_NAME	CUST_PHONENO	CUST_EMAIL	DEVICE_MAKEMODEL	IMEI_NO	AGREEMENT	AGREEMENT2 -->
+<table class="table table-striped table-condensed">
+  <thead>
+    <th>TRANS_DATE</th>
+    <th>MSA_ID</th>
+    <th>STORE_NAME</th>
+    <th>CUST_NAME</th>
+    <th>CUST_PHONENO</th>
+    <th>DEVICE_MAKEMODEL</th>
+    <th>IMEI_NO</th>
+    <th>AGREEMENT</th>
+    <th>AGREEMENT2</th>
+    <th>PRODUCT_NAME</th>
+  </thead>
+  <tbody>
+    {% for customer in customers %}
+    <tr>
+      <td>{{ customer.registration_date }}</td>
+      <td>{{ customer.staff_msa_id }}</td>
+      <td>{{ customer.store_name }}</td>
+      <td>{{ customer.customer_name }}</td>
+      <td>{{ customer.customer_phone }}</td>
+      <td>{{ customer.device_make_model }}</td>
+      <td>{{ customer.imei_number }}</td>
+      <td>{{ customer.agreement_1 }}</td>
+      <td>{{ customer.agreement_2 }}</td>
+      <td>{{ customer.product_name }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
